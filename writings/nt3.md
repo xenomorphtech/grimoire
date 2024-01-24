@@ -29,10 +29,9 @@ nice typed text transformer
 
 
 ```
-fn emit_erlang(in: AST) -> CODE {
+fn emit_erlang(in: Ast) -> String {
 
 }
-
 
 mod something where
 
@@ -43,8 +42,18 @@ let b = x: x + 1
 
 mod something1 where
 
-
-emit_erlang(something)
+the operator > only makes sense as comparator when applied to native types 
 
 ```
 
+```
+
+hotload consolidation of old -> new environment check 
+
+```
+
+
+some extra thought, like this expression:
+```
+when something is Error(..) raise("compilation error")
+```
