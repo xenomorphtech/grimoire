@@ -1,0 +1,23 @@
+import cc, cc1
+
+let something = 
+   cc.file_read(
+   "something.nt3") 
+      then cc.parse 
+      then cc.type_check
+
+case something {
+ Error(e) -> cc.report(e) 
+ Ok(e) ->
+  list.each(e, 
+    val: 
+     cc.emit_erlang(val) 
+      then cc.file_write(val.name + ".erl", _)
+  )
+}
+
+mod something {
+  
+}
+
+
